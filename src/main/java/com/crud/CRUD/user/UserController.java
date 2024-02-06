@@ -46,6 +46,8 @@ public class UserController {
     @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable Long id){
         try {
+            // We first find whether the user exists in the database
+            userRepository.findById(id).get();
             userRepository.deleteById(id);
             return "User deleted successfully!";
         } catch (Exception e) {
