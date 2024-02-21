@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -20,7 +19,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository; 
 
-    @GetMapping("path")
+    @GetMapping
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
@@ -55,6 +54,4 @@ public class UserController {
         }
 
     }
-
-
 }
